@@ -1,8 +1,8 @@
 //https://zenn.dev/okoe/articles/7876b897c0fccf
 
-let userBirthdayYear = document.querySelector(".birthday-year");
-let userBirthdayMonth = document.querySelector(".birthday-month");
-let userBirthdayDay = document.querySelector(".birthday-day");
+let userBirthdayMonth = document.getElementById("birthday-month");
+let userBirthdayDay = document.getElementById("birthday-day");
+let send = document.getElementById("send");
 
 function createOptionForElements(elem, val) {
     let option = document.createElement("option");
@@ -11,9 +11,6 @@ function createOptionForElements(elem, val) {
     elem.appendChild(option);
 }
 
-for(let i = 1920; i <= 2020; i++) {
-    createOptionForElements(userBirthdayYear, i);
-}
 for(let i = 1; i <= 12; i++) {
     createOptionForElements(userBirthdayMonth, i);
 }
@@ -21,34 +18,23 @@ for(let i = 1; i <= 31; i++) {
     createOptionForElements(userBirthdayDay, i);
 }
 
-function changeTheDay() {
 
-    userBirthdayDay.innerHTML = "";
+send.addEventListener("click", function() {
+    let name = document.getElementById("name").value;
+    let month = document.getElementById("birthday-month").value;
+    let day = document.getElementById("birthday-day").value;
 
-    let lastDayOfTheMonth = new Date(userBirthdayYear.value, userBirthdayMonth.value, 0).getDate();
-
-    for(let i = 1; i <= lastDayOfTheMonth; i++) {
-        createOptionForElements(userBirthdayDay, i);
-    }
-}
-
-userBirthdayYear.addEventListener("change", function() {
-    changeTheDay();
+    console.log(name);
+    console.log(month);
+    console.log(day);
 });
-
-userBirthdayMonth.addEventListener("change", function() {
-    changeTheDay();
-});
-
-
-
-
-
 
 // document.getElementById("send").onclick = function() {
-//     let name = document.getElementById("name").value;
-//     let date = document.getElementById("date").value;
+//     let name = document.getElementsById("name");
+//     let userBirthdayMonth = document.querySelector(".birthday-month");
+//     let userBirthdayDay = document.querySelector(".birthday-day");
 
 //     console.log(name);
-//     console.log(date);
+//     console.log(userBirthdayMonth);
+//     console.log(userBirthdayDay);
 // }

@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zodiac</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
         <h1>あなたの星座を調べます。</h1>
-        <div>
-            <p>お名前を入力してください</p>
-            <form name="name">
-            <input type="text" id="name">
-            </form>
-        </div>
-        <div>
-            <p>生年月日を入力してください</p>
-            <select class="birthday-year">
-            </select>
-            /
-            <select class="birthday-month">
-            </select>
-            /
-            <select class="birthday-day">
-            </select>
-        </div>
-        <div>
-            <input type="submit" value="調べる" id="send">
-        </div>
+            <div>
+                <p>お名前を入力してください</p>
+                <form name="name">
+                    <input type="text" id="name">
+                </form>
+            </div>
+            <div>
+                <p>生まれた月と日を入力してください</p>
+                <form name="month">
+                    <select id="birthday-month">
+                    </select>
+                </form>
+            
+                <form name="day">
+                    <select id="birthday-day">
+                    </select>
+                </form>
+            </div>
+            <div id ="send">
+                    <button type="button" value="調べる">調べる</button>
+            </div>
         <script src="js/zodiac.js"></script>
     </body>
 </html>
